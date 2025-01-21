@@ -4,6 +4,8 @@ import {
   useContext,
   useEffect,
   useState,
+  ReactNode,
+  ReactElement,
 } from 'react'
 
 import { changeDocumentTheme, getSystemTheme } from './lib'
@@ -16,21 +18,25 @@ interface ThemeContextType {
   toggleTheme: () => void
 }
 
-const ThemeContext = createContext<ThemeContextType>({
+const defaultThemeContext: ThemeContextType = {
   theme: 'system',
   setTheme: () => {},
   toggleTheme: () => {},
-})
+}
+
+const ThemeContext = createContext<ThemeContextType>(defaultThemeContext)
+
+const ThemeContextProvider = ThemeContext.Provider
 
 interface ThemeProviderProps {
-  children: React.ReactNode
+  children: ReactNode
   theme?: Theme
 }
 
 export const ThemeProvider = ({
   children,
   theme = 'system',
-}: ThemeProviderProps) => {
+}: ThemeProviderProps): ReactElement => {
   const [currentTheme, setCurrentTheme] = useState<Theme>(theme)
 
   const setTheme = useCallback((newTheme: Theme) => {
@@ -47,13 +53,11 @@ export const ThemeProvider = ({
   }, [setTheme, theme])
 
   return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    <ThemeContext.Provider
+    <ThemeContextProvider
       value={{ theme: currentTheme, setTheme, toggleTheme }}
     >
       {children}
-    </ThemeContext.Provider>
+    </ThemeContextProvider>
   )
 }
 

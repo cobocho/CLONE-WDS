@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import '@repo/design-system/styles.css'
-import { DARK_MODE_CLASS_NAME, ThemeProvider } from '@repo/design-system'
+import { ThemeProvider } from '@repo/design-system'
 
 import './index.css'
+import { ReactNode } from 'react'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -22,12 +23,12 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ThemeProvider theme="light">{children}</ThemeProvider>
+        <ThemeProvider children={children} theme="light"></ThemeProvider>
       </body>
     </html>
   )
