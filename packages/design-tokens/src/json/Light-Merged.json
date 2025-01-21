@@ -1,0 +1,212 @@
+{
+  "Primary": {
+    "Normal": {
+      "value": "#0066ff",
+      "type": "color"
+    },
+    "Strong": {
+      "value": "#005eeb",
+      "type": "color"
+    },
+    "Heavy": {
+      "value": "#0054d1",
+      "type": "color"
+    }
+  },
+  "Label": {
+    "Normal": {
+      "value": "#171719",
+      "type": "color"
+    },
+    "Strong": {
+      "value": "#000000",
+      "type": "color"
+    },
+    "Neutral": {
+      "value": "#2e2f33e0",
+      "type": "color",
+      "description": "Light: Cool Neutral/22, Opacity/88\nDark: Cool Neutral/90, Opacity/88"
+    },
+    "Alternative": {
+      "value": "#37383c9c",
+      "type": "color",
+      "description": "Light: Cool Neutral/25, Opacity/61\nDark: Cool Neutral/80, Opacity/61"
+    },
+    "Assistive": {
+      "value": "#37383c47",
+      "type": "color",
+      "description": "Light: Cool Neutral/25, Opacity/28\nDark: Cool Neutral/80, Opacity/28"
+    },
+    "Disable": {
+      "value": "#37383c29",
+      "type": "color",
+      "description": "Light: Cool Neutral/25, Opacity/16\nDark: Cool Neutral/70, Opacity/16"
+    }
+  },
+  "Background": {
+    "Normal": {
+      "Normal": {
+        "value": "#ffffff",
+        "type": "color"
+      },
+      "Alternative": {
+        "value": "#f7f7f8",
+        "type": "color"
+      }
+    },
+    "Elevated": {
+      "Normal": {
+        "value": "#ffffff",
+        "type": "color"
+      },
+      "Alternative": {
+        "value": "#f7f7f8",
+        "type": "color"
+      }
+    }
+  },
+  "Interaction": {
+    "Inactive": {
+      "value": "#989ba2",
+      "type": "color"
+    },
+    "Disable": {
+      "value": "#f4f4f5",
+      "type": "color"
+    }
+  },
+  "Line": {
+    "Normal": {
+      "Normal": {
+        "value": "#70737c38",
+        "type": "color",
+        "description": "Light: Cool Neutral/50, Opacity/22\nDark: Cool Neutral/50, Opacity/32"
+      },
+      "Neutral": {
+        "value": "#70737c29",
+        "type": "color",
+        "description": "Light: Cool Neutral/50, Opacity/16\nDark: Cool Neutral/50, Opacity/28"
+      },
+      "Alternative": {
+        "value": "#70737c14",
+        "type": "color",
+        "description": "Light: Cool Neutral/50, Opacity/8\nDark: Cool Neutral/50, Opacity/22"
+      },
+      "_Strong": {
+        "value": "#70737c85",
+        "type": "color",
+        "description": "Light: Cool Neutral/50, Opacity/52\nDark: Cool Neutral/90, Opacity/52"
+      }
+    },
+    "Solid": {
+      "Normal": {
+        "value": "#e1e2e4",
+        "type": "color"
+      },
+      "Neutral": {
+        "value": "#eaebec",
+        "type": "color"
+      },
+      "Alternative": {
+        "value": "#f4f4f5",
+        "type": "color"
+      },
+      "_Strong": {
+        "value": "#aeb0b6",
+        "type": "color"
+      }
+    }
+  },
+  "Fill": {
+    "Normal": {
+      "value": "#70737c14",
+      "type": "color",
+      "description": "Light: Cool Neutral/50, Opacity/8\nDark: Cool Neutral/50, Opacity/22"
+    },
+    "Strong": {
+      "value": "#70737c29",
+      "type": "color",
+      "description": "Light: Cool Neutral/50, Opacity/16\nDark: Cool Neutral/50, Opacity/28"
+    },
+    "Alternative": {
+      "value": "#70737c0d",
+      "type": "color",
+      "description": "Light: Cool Neutral/50, Opacity/5\nDark: Cool Neutral/50, Opacity/12"
+    }
+  },
+  "Status": {
+    "Positive": {
+      "value": "#00bf40",
+      "type": "color"
+    },
+    "Cautionary": {
+      "value": "#ff9200",
+      "type": "color"
+    },
+    "Negative": {
+      "value": "#ff4242",
+      "type": "color"
+    }
+  },
+  "Static": {
+    "White": {
+      "value": "#ffffff",
+      "type": "color"
+    },
+    "Black": {
+      "value": "#000000",
+      "type": "color"
+    }
+  },
+  "Accent": {
+    "Lime": {
+      "value": "#58cf04",
+      "type": "color"
+    },
+    "Cyan": {
+      "value": "#00bdde",
+      "type": "color"
+    },
+    "Light Blue": {
+      "value": "#00aeff",
+      "type": "color"
+    },
+    "Violet": {
+      "value": "#6541f2",
+      "type": "color"
+    },
+    "Pink": {
+      "value": "#f553da",
+      "type": "color"
+    },
+    "Red Orange": {
+      "value": "#ff5e00",
+      "type": "color"
+    },
+    "Purple": {
+      "value": "#cb59ff",
+      "type": "color"
+    }
+  },
+  "Material": {
+    "Dimmer": {
+      "value": "#17171985",
+      "type": "color",
+      "description": "Light: Cool Neutral/10, Opacity/52\nDark: Cool Neutral/50, Opacity/74"
+    }
+  },
+  "Inverse": {
+    "Primary": {
+      "value": "#3385ff",
+      "type": "color"
+    },
+    "Background": {
+      "value": "#1b1c1e",
+      "type": "color"
+    },
+    "Label": {
+      "value": "#f7f7f8",
+      "type": "color"
+    }
+  }
+}
