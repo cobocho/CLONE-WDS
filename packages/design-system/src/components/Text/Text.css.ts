@@ -1,23 +1,25 @@
 import { recipe } from '@vanilla-extract/recipes'
 import type { RecipeVariants } from '@vanilla-extract/recipes'
 
-import { paletteVars, semanticVars } from '@/index.css'
+import {
+  Color,
+  PaletteColor,
+  paletteVars,
+  SemanticColor,
+  semanticVars,
+} from '@/index.css'
 
-type SemanticColor = keyof typeof semanticVars
-type PaletteColor = keyof typeof paletteVars
-type ColorKey = SemanticColor | PaletteColor
-
-const colorVariants: Record<ColorKey, { color: string }> = Object.keys(
+const colorVariants: Record<Color, { color: string }> = Object.keys(
   Object.assign(semanticVars, paletteVars),
 ).reduce(
   (acc, key) => {
-    acc[key as ColorKey] = {
+    acc[key as Color] = {
       color:
         semanticVars[key as SemanticColor] || paletteVars[key as PaletteColor],
     }
     return acc
   },
-  {} as Record<ColorKey, { color: string }>,
+  {} as Record<Color, { color: string }>,
 )
 
 export const textRecipe = recipe({

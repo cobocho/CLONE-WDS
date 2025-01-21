@@ -15,7 +15,18 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["vitest/globals"]
   },
-  "include": ["src", ".storybook"]
+  "include": [
+    "src",
+    ".storybook",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "src/**/*.stories.tsx",
+    "setupTests.ts",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": ["node_modules", "dist"]
 }

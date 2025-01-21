@@ -23,3 +23,7 @@ export const paletteVars = createGlobalThemeContract(paletteContract, prefix)
 createGlobalTheme('body', semanticVars, lightColors)
 createGlobalTheme(`body.${DARK_MODE_CLASS_NAME}`, semanticVars, darkColors)
 createGlobalTheme('body', paletteVars, paletteColors)
+
+export type SemanticColor = keyof typeof semanticVars
+export type PaletteColor = keyof typeof paletteVars
+export type Color = SemanticColor | PaletteColor
