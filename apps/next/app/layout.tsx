@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
-// import '@repo/design-system/styles.css';
+import '@repo/design-system/styles.css';
+import { DARK_MODE_CLASS_NAME } from '@repo/design-system';
 
 const geistSans = localFont({
 	src: './fonts/GeistVF.woff',
@@ -23,11 +24,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html
-			lang="en"
-			className="dark-mode"
-		>
-			<body className={`${geistSans.variable} ${geistMono.variable}`}>
+		<html lang="en">
+			<body
+				className={`${geistSans.variable} ${geistMono.variable} ${DARK_MODE_CLASS_NAME}`}
+			>
 				{children}
 			</body>
 		</html>

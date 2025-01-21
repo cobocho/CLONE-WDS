@@ -62,7 +62,7 @@ export default function Home() {
 						/>
 						Deploy now
 					</a>
-					<Button>HELLO</Button>
+					<Button>타이포그래피: ‘Typography’, 1972. @ㅇ0ㅇ ₩0 〈응♥〉 </Button>
 					<a
 						href="https://turbo.build/repo/docs?utm_source"
 						target="_blank"
