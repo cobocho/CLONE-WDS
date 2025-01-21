@@ -1,22 +1,7 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-  ReactNode,
-  ReactElement,
-} from 'react'
+import { createContext, useContext, ReactNode, ReactElement } from 'react'
 
-import { changeDocumentTheme, getSystemTheme } from './lib'
-
-export type Theme = 'light' | 'dark' | 'system'
-
-interface ThemeContextType {
-  theme: Theme
-  setTheme: (theme: Theme) => void
-  toggleTheme: () => void
-}
+import { useThemeControl } from './ThemeProvider.hooks'
+import { Theme, ThemeContextType } from './ThemeProvider.model'
 
 const defaultThemeContext: ThemeContextType = {
   theme: 'system',
@@ -37,20 +22,7 @@ export const ThemeProvider = ({
   children,
   theme = 'system',
 }: ThemeProviderProps): ReactElement => {
-  const [currentTheme, setCurrentTheme] = useState<Theme>(theme)
-
-  const setTheme = useCallback((newTheme: Theme) => {
-    setCurrentTheme(newTheme)
-    changeDocumentTheme(newTheme !== 'system' ? newTheme : getSystemTheme())
-  }, [])
-
-  const toggleTheme = useCallback(() => {
-    setTheme(currentTheme === 'light' ? 'dark' : 'light')
-  }, [setTheme, currentTheme])
-
-  useEffect(() => {
-    setTheme(theme)
-  }, [setTheme, theme])
+  const { theme: currentTheme, setTheme, toggleTheme } = useThemeControl(theme)
 
   return (
     <ThemeContextProvider

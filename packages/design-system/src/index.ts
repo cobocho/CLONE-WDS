@@ -1,5 +1,5 @@
 export { Button } from './components/Button'
 export { Text } from './components/Text'
-export { ThemeProvider, useTheme } from './components/ThemeProvider'
+export { type Theme, ThemeProvider, useTheme } from './components/ThemeProvider'
 export { DARK_MODE_CLASS_NAME } from './index.css'
 export { paletteVars, semanticVars } from './index.css'
