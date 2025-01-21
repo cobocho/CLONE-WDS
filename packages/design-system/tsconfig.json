@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"target": "ESNext",
 		"module": "ESNext",
-		"jsx": "react",
+		"jsx": "react-jsx",
 		"declaration": true,
 		"declarationDir": "dist",
 		"emitDeclarationOnly": true,
@@ -11,7 +11,11 @@
 		"skipLibCheck": true,
 		"outDir": "dist",
 		"moduleResolution": "node",
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"]
+		}
 	},
 	"include": ["src"]
 }

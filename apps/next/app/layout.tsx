@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import './globals.css';
 import '@repo/design-system/styles.css';
-import { DARK_MODE_CLASS_NAME } from '@repo/design-system';
+import { DARK_MODE_CLASS_NAME, ThemeProvider } from '@repo/design-system';
 
 const geistSans = localFont({
 	src: './fonts/GeistVF.woff',
@@ -25,10 +24,8 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} ${DARK_MODE_CLASS_NAME}`}
-			>
-				{children}
+			<body className={`${geistSans.variable} ${geistMono.variable}`}>
+				<ThemeProvider theme="light">{children}</ThemeProvider>
 			</body>
 		</html>
 	);

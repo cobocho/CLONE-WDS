@@ -37,12 +37,3 @@ createGlobalTheme(`body.${DARK_MODE_CLASS_NAME}`, vars, {
 		...DARK,
 	},
 });
-
-export const pretentdardJP = 'Pretendard JP';
-
-globalFontFace(pretentdardJP, {
-	src: 'url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css)',
-	fontWeight: 100,
-	fontStyle: 'normal',
-	fontDisplay: 'swap',
-});

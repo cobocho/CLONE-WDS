@@ -1,11 +1,16 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import babel from '@rollup/plugin-babel';
 import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin';
 import filesize from 'rollup-plugin-filesize';
+import path from 'path';
+import alias from '@rollup/plugin-alias';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function addUseClient() {
 	return {
@@ -35,16 +40,17 @@ export default {
 			assetFileNames: mergeStyles,
 		},
 	],
-	external: ['react', 'react-dom'], // 외부 의존성
 	plugins: [
+		alias({
+			entries: [{ find: '@', replacement: path.join(__dirname, './src') }],
+		}),
 		peerDepsExternal(),
 		resolve(), // node_modules 확인
 		commonjs(), // CommonJS 변환
 		typescript({ tsconfig: './tsconfig.json' }), // 타입스크립트 변환
-		babel({ babelHelpers: 'bundled', exclude: 'node_modules/**' }), // Babel
 		vanillaExtractPlugin(),
-		addUseClient(),
 		terser(), // 코드 압축
 		filesize(),
+		addUseClient(),
 	],
 };
