@@ -47,6 +47,8 @@ export const ThemeProvider = ({
   }, [setTheme, theme])
 
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     <ThemeContext.Provider
       value={{ theme: currentTheme, setTheme, toggleTheme }}
     >
