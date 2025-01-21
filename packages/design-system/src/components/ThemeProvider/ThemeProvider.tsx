@@ -3,13 +3,7 @@ import { createContext, useContext, ReactNode, ReactElement } from 'react'
 import { useThemeControl } from './ThemeProvider.hooks'
 import { Theme, ThemeContextType } from './ThemeProvider.model'
 
-const defaultThemeContext: ThemeContextType = {
-  theme: 'system',
-  setTheme: () => {},
-  toggleTheme: () => {},
-}
-
-const ThemeContext = createContext<ThemeContextType>(defaultThemeContext)
+const ThemeContext = createContext<ThemeContextType | null>(null)
 
 const ThemeContextProvider = ThemeContext.Provider
 
