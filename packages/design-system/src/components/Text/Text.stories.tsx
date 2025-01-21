@@ -11,6 +11,11 @@ const meta = {
     color: 'LabelNormal',
   },
   argTypes: {
+    children: {
+      control: { type: 'text' },
+      description: '텍스트 내용',
+      name: 'content',
+    },
     color: {
       options: [...Object.keys(lightColors), ...Object.keys(paletteColors)],
       control: { type: 'select' },
