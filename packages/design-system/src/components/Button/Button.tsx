@@ -8,7 +8,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 export function Button({ children, ...props }: ButtonProps) {
   return (
     <button {...props} className={`${button}`}>
-      <AndroidIcon />
+      <AndroidIcon width={48} height={48} />
       {children}
     </button>
   )

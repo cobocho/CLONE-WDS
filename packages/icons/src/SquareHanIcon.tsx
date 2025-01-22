@@ -2,17 +2,25 @@ import * as React from 'react'
 import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
 const SvgSquareHanIcon = (
-  props: SVGProps<SVGSVGElement>,
+  { title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps,
   ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
     fill="none"
     viewBox="0 0 24 24"
     ref={ref}
+    aria-labelledby={titleId}
     {...props}
   >
+    {title ? <title id={titleId}>{title}</title> : null}
     <path
       fill="#171719"
       d="M16.287 8.976v1.289h-1.32c-.482 1.308-1.127 2.407-1.938 3.32.937.688 2.088 1.206 3.471 1.514-.32.307-.757.952-.98 1.328-1.471-.381-2.656-.977-3.617-1.777-1.005.79-2.19 1.381-3.568 1.806-.16-.327-.587-.971-.835-1.289 1.34-.342 2.471-.84 3.393-1.518-.786-.938-1.388-2.066-1.873-3.384H7.694v-1.29h3.573V7.54h1.369v1.436h3.65Zm-5.801 1.289a7.7 7.7 0 0 0 1.5 2.387c.592-.664 1.063-1.455 1.417-2.387h-2.918Z"

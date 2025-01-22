@@ -2,17 +2,25 @@ import * as React from 'react'
 import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
 const SvgLogoNaverBlog2Icon = (
-  props: SVGProps<SVGSVGElement>,
+  { title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps,
   ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
     fill="none"
     viewBox="0 0 24 24"
     ref={ref}
+    aria-labelledby={titleId}
     {...props}
   >
+    {title ? <title id={titleId}>{title}</title> : null}
     <path
       fill="#00C73C"
       d="M18.494 4.08H5.506A3.405 3.405 0 0 0 2.1 7.486v8.058a3.405 3.405 0 0 0 3.406 3.406h4.593l1.565 2.703a.372.372 0 0 0 .643 0l1.564-2.703h4.623a3.405 3.405 0 0 0 3.406-3.406V7.486a3.405 3.405 0 0 0-3.405-3.406Z"

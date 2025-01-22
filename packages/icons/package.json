@@ -22,8 +22,7 @@
   "scripts": {
     "lint": "eslint .",
     "build": "rm -rf dist &&  rollup -c",
-    "icons:gen": "rm -rf src && npx @svgr/cli svgs --out-dir src --typescript --index-template index-template.cjs --ref --no-dimensions &&  pnpm lint --fix",
-    "rename-svgs": "node ./scripts/rename-svgs.cjs",
+    "icon:gen": "rm -rf src && npx @svgr/cli svgs && pnpm lint --fix",
     "compile": "node ./scripts/compile.cjs"
   },
   "keywords": [],

@@ -2,17 +2,25 @@ import * as React from 'react'
 import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
 const SvgLogoGooglePlayIcon = (
-  props: SVGProps<SVGSVGElement>,
+  { title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps,
   ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
     fill="none"
     viewBox="0 0 24 24"
     ref={ref}
+    aria-labelledby={titleId}
     {...props}
   >
+    {title ? <title id={titleId}>{title}</title> : null}
     <path
       fill="#EA4335"
       d="m11.944 11.575-7.87 8.351a2.126 2.126 0 0 0 3.133 1.279l.022-.015 8.854-5.107-4.146-4.515z"
