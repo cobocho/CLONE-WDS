@@ -1,0 +1,59 @@
+{
+  "name": "@repo/icons",
+  "version": "1.0.0",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": {
+      "import": "./dist/*.js",
+      "require": "./dist/*.cjs",
+      "types": "./dist/*.d.ts"
+    }
+  },
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "lint": "eslint .",
+    "build": "rm -rf dist &&  rollup -c",
+    "icons:gen": "rm -rf src && npx @svgr/cli svgs --out-dir src --typescript --index-template index-template.cjs --ref --no-dimensions &&  pnpm lint --fix",
+    "rename-svgs": "node ./scripts/rename-svgs.cjs",
+    "compile": "node ./scripts/compile.cjs"
+  },
+  "keywords": [],
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@repo/eslint-config": "workspace:*",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "eslint": "^8.57.0",
+    "glob": "^11.0.1",
+    "rollup": "^4.30.1",
+    "rollup-plugin-filesize": "^10.0.0",
+    "rollup-plugin-multi-input": "^1.5.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^5.7.3",
+    "@types/react": "^18",
+    "@types/react-dom": "^18"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}

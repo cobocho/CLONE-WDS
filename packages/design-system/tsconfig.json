@@ -14,7 +14,8 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@repo/icons/*": ["./node_modules/@repo/icons/dist/*"]
     },
     "types": ["vitest/globals"]
   },

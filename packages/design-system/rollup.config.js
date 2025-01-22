@@ -53,6 +53,12 @@ export default {
       declaration: true,
       declarationDir: 'dist',
       rootDir: 'src',
+      exclude: [
+        'node_modules',
+        '**/*.stories.tsx',
+        '**/*.spec.ts',
+        '**/*.spec.tsx',
+      ],
     }), // 타입스크립트 변환
     vanillaExtractPlugin(),
     terser(), // 코드 압축

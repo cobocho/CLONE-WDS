@@ -3,7 +3,7 @@ import { useState, useCallback, useEffect } from 'react'
 import { changeDocumentTheme, getSystemTheme } from './ThemeProvider.utils'
 import { Theme } from './ThemeProvider.model'
 
-export const useThemeControl = (theme: Theme) => {
+export const useThemeControl = (theme: Theme = 'system') => {
   const [currentTheme, setCurrentTheme] = useState<Theme>(theme)
 
   const setTheme = useCallback((newTheme: Theme) => {

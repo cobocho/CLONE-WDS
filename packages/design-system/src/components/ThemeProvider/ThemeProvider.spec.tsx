@@ -45,15 +45,23 @@ describe('ThemeProvider Hooks Tests', () => {
     vi.clearAllMocks()
   })
 
-  it('초기 테마를 설정한다.', () => {
-    // Given
-    const theme = 'light'
+  it.each<Theme>(['light', 'dark', 'system'])(
+    '초기 테마를 설정한다.',
+    (theme) => {
+      // Given
+      const { result } = renderHook(() => useThemeControl(theme))
 
-    // When
-    const { result } = renderHook(() => useThemeControl(theme))
+      // Then
+      expect(result.current.theme).toBe(theme)
+    },
+  )
+
+  it('초기 테마가 설정되지 않았을 경우 시스템 테마를 사용한다.', () => {
+    // Given
+    const { result } = renderHook(() => useThemeControl())
 
     // Then
-    expect(result.current.theme).toBe('light')
+    expect(result.current.theme).toBe('system')
   })
 
   it.each<Theme>(['light', 'dark', 'system'])(
