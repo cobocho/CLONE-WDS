@@ -19,12 +19,12 @@ export const StorybookSubheader = ({
     <div className={storybookSubheader}>
       <div className={storybookSubheaderTitle}>
         <div className={storybookSubheaderTitleBlock}>
-          <Text as="h1" type="Title 3" weight="semibold">
+          <Text as="h1" type="Title 3" weight="semibold" whiteSpace="pre">
             {title}
           </Text>
         </div>
         <div className={storybookSubheaderTitleBlock}>
-          {description && <Text>{description}</Text>}
+          {description && <Text whiteSpace="pre">{description}</Text>}
         </div>
       </div>
     </div>

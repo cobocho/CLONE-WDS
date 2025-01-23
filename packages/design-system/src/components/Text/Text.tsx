@@ -27,11 +27,12 @@ export const Text = ({
   type,
   weight,
   whiteSpace,
+  transform,
   className = '',
   ...props
 }: TextProps) => {
   return createElement(as, {
     ...props,
-    className: `${textRecipe({ color, type, weight, whiteSpace })} ${className}`,
+    className: `${textRecipe({ color, type, weight, whiteSpace, transform })} ${className}`,
   })
 }

@@ -163,6 +163,17 @@ export const textRecipe = recipe({
         whiteSpace: 'unset',
       },
     },
+    transform: {
+      uppercase: {
+        textTransform: 'uppercase',
+      },
+      lowercase: {
+        textTransform: 'lowercase',
+      },
+      capitalize: {
+        textTransform: 'capitalize',
+      },
+    },
   },
   defaultVariants: {
     color: 'LabelNormal',

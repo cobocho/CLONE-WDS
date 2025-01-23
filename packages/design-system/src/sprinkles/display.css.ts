@@ -58,6 +58,7 @@ export const displayProperties = defineProperties({
       'baseline',
       'normal',
     ],
+    flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
     gap: spaces,
     rowGap: spaces,
     columnGap: spaces,
