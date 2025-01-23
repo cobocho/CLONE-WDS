@@ -22,6 +22,7 @@ export default defineConfig({
         'rollup.config.js',
         'vitest.config.ts',
         'vite.config.ts',
+        './src/storybook-units',
       ],
     },
   },

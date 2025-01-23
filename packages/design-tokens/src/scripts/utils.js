@@ -26,6 +26,7 @@ export function createSDPlatform(name) {
     js: {
       transformGroup: 'js',
       buildPath: 'src/variables/',
+      transforms: ['color/css'],
       files: [
         {
           destination: `${name}.ts`,

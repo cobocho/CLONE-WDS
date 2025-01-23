@@ -24,11 +24,14 @@ type TextProps = {
 export const Text = ({
   as = 'span',
   color,
+  type,
+  weight,
+  whiteSpace,
   className = '',
   ...props
 }: TextProps) => {
   return createElement(as, {
     ...props,
-    className: `${textRecipe({ color })} ${className}`,
+    className: `${textRecipe({ color, type, weight, whiteSpace })} ${className}`,
   })
 }

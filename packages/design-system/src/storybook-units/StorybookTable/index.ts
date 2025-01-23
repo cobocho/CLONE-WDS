@@ -1,0 +1,1 @@
+export { StorybookTable } from './StorybookTable'

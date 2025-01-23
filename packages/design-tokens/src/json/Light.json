@@ -1,25 +1,25 @@
 {
   "Primary": {
     "Normal": {
-      "value": "{Blue.50}",
+      "value": "#0066ff",
       "type": "color"
     },
     "Strong": {
-      "value": "{Blue.45}",
+      "value": "#005eeb",
       "type": "color"
     },
     "Heavy": {
-      "value": "{Blue.40}",
+      "value": "#0054d1",
       "type": "color"
     }
   },
   "Label": {
     "Normal": {
-      "value": "{Cool Neutral.10}",
+      "value": "#171719",
       "type": "color"
     },
     "Strong": {
-      "value": "{Common.0}",
+      "value": "#000000",
       "type": "color"
     },
     "Neutral": {
@@ -46,39 +46,39 @@
   "Background": {
     "Normal": {
       "Normal": {
-        "value": "{Common.100}",
+        "value": "#ffffff",
         "type": "color"
       },
       "Alternative": {
-        "value": "{Cool Neutral.99}",
+        "value": "#f7f7f8",
         "type": "color"
       }
     },
     "Elevated": {
       "Normal": {
-        "value": "{Common.100}",
+        "value": "#ffffff",
         "type": "color"
       },
       "Alternative": {
-        "value": "{Cool Neutral.99}",
+        "value": "#f7f7f8",
         "type": "color"
       }
     }
   },
   "Interaction": {
     "Inactive": {
-      "value": "{Cool Neutral.70}",
+      "value": "#989ba2",
       "type": "color"
     },
     "Disable": {
-      "value": "{Cool Neutral.98}",
+      "value": "#f4f4f5",
       "type": "color"
     }
   },
   "Line": {
     "Normal": {
       "Normal": {
-        "value": "#70737c38",
+        "value": "#70737c22",
         "type": "color",
         "description": "Light: Cool Neutral/50, Opacity/22\nDark: Cool Neutral/50, Opacity/32"
       },
@@ -100,19 +100,19 @@
     },
     "Solid": {
       "Normal": {
-        "value": "{Cool Neutral.96}",
+        "value": "#e1e2e4",
         "type": "color"
       },
       "Neutral": {
-        "value": "{Cool Neutral.97}",
+        "value": "#eaebec",
         "type": "color"
       },
       "Alternative": {
-        "value": "{Cool Neutral.98}",
+        "value": "#f4f4f5",
         "type": "color"
       },
       "_Strong": {
-        "value": "{Cool Neutral.80}",
+        "value": "#aeb0b6",
         "type": "color"
       }
     }
@@ -136,55 +136,55 @@
   },
   "Status": {
     "Positive": {
-      "value": "{Green.50}",
+      "value": "#00bf40",
       "type": "color"
     },
     "Cautionary": {
-      "value": "{Orange.50}",
+      "value": "#ff9200",
       "type": "color"
     },
     "Negative": {
-      "value": "{Red.50}",
+      "value": "#ff4242",
       "type": "color"
     }
   },
   "Static": {
     "White": {
-      "value": "{Common.100}",
+      "value": "#ffffff",
       "type": "color"
     },
     "Black": {
-      "value": "{Common.0}",
+      "value": "#000000",
       "type": "color"
     }
   },
   "Accent": {
     "Lime": {
-      "value": "{Lime.50}",
+      "value": "#58cf04",
       "type": "color"
     },
     "Cyan": {
-      "value": "{Cyan.50}",
+      "value": "#00bdde",
       "type": "color"
     },
     "Light Blue": {
-      "value": "{Light Blue.50}",
+      "value": "#00aeff",
       "type": "color"
     },
     "Violet": {
-      "value": "{Violet.50}",
+      "value": "#6541f2",
       "type": "color"
     },
     "Pink": {
-      "value": "{Pink.50}",
+      "value": "#f553da",
       "type": "color"
     },
     "Red Orange": {
-      "value": "{Red Orange.50}",
+      "value": "#ff5e00",
       "type": "color"
     },
     "Purple": {
-      "value": "{Purple.50}",
+      "value": "#cb59ff",
       "type": "color"
     }
   },
@@ -197,15 +197,15 @@
   },
   "Inverse": {
     "Primary": {
-      "value": "{Blue.60}",
+      "value": "#3385ff",
       "type": "color"
     },
     "Background": {
-      "value": "{Cool Neutral.15}",
+      "value": "#1b1c1e",
       "type": "color"
     },
     "Label": {
-      "value": "{Cool Neutral.99}",
+      "value": "#f7f7f8",
       "type": "color"
     }
   }

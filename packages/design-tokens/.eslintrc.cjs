@@ -2,5 +2,5 @@
 module.exports = {
   root: true,
   extends: ['@repo/eslint-config/react.js'],
-  ignorePatterns: ['rollup.config.js', 'dist'],
+  ignorePatterns: ['rollup.config.js', 'dist', 'generate.js'],
 }

@@ -3,8 +3,8 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 
 interface SVGRProps {
-  title?: string;
-  titleId?: string;
+  title?: string
+  titleId?: string
 }
 const SvgBubbleIcon = (
   { title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps,

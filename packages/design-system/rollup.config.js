@@ -55,6 +55,7 @@ export default {
       rootDir: 'src',
       exclude: [
         'node_modules',
+        '**/*.stories.css.ts',
         '**/*.stories.tsx',
         '**/*.spec.ts',
         '**/*.spec.tsx',

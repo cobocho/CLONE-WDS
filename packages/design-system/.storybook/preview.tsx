@@ -4,7 +4,7 @@ import { ThemeProvider } from '../src/components/ThemeProvider/ThemeProvider'
 import { withThemeByClassName } from '@storybook/addon-themes'
 import { useGlobals } from 'storybook/internal/preview-api'
 import { useEffect } from 'react'
-import { useTheme } from '../src/components/ThemeProvider'
+import './index.css'
 
 const preview: Preview = {
   parameters: {
