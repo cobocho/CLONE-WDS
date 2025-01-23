@@ -15,7 +15,7 @@ import {
 } from './Text.stories.css'
 
 const meta = {
-  title: 'Components/Text',
+  title: 'Theme/Typography',
   component: Text,
   args: {
     children: 'The Quick Brown Fox Jumps Over The Lazy Dog',
@@ -374,12 +374,14 @@ export const Definition: Story = {
 
 export const Playground: Story = {
   parameters: {
+    layout: 'centered',
     docs: {
       description: {
         component: 'parameters-docs-description-component는 이곳을 설명합니다.',
       },
     },
   },
+
   args: {
     whiteSpace: 'pre',
     children: 'The Quick Brown Fox Jumps Over The Lazy Dog',

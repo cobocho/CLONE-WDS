@@ -1,5 +1,7 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles'
 
+import { spaces } from './space.css'
+
 export const displayProperties = defineProperties({
   properties: {
     display: [
@@ -39,6 +41,7 @@ export const displayProperties = defineProperties({
       'table-column',
       'table-cell',
     ],
+    flexDirection: ['row', 'column', 'row-reverse', 'column-reverse'],
     alignItems: [
       'stretch',
       'center',
@@ -55,6 +58,19 @@ export const displayProperties = defineProperties({
       'baseline',
       'normal',
     ],
+    gap: spaces,
+    rowGap: spaces,
+    columnGap: spaces,
+    gridGap: spaces,
+    gridRowGap: spaces,
+    gridColumnGap: spaces,
+    gridAutoFlow: ['row', 'column', 'row dense', 'column dense'],
+    gridAutoColumns: spaces,
+    gridAutoRows: spaces,
+    gridTemplateColumns: spaces,
+    gridTemplateRows: spaces,
+    gridTemplateAreas: spaces,
+    gridTemplate: spaces,
   },
 })
 

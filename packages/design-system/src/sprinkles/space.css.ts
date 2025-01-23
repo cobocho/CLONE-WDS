@@ -1,6 +1,6 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles'
 
-const spaces = [
+export const spaces = [
   '0.5px',
   '1px',
   '2px',
@@ -44,19 +44,20 @@ const spaceProperties = defineProperties({
     paddingLeft: spaces,
     paddingBlock: spaces,
     paddingInline: spaces,
-
-    gap: spaces,
-    rowGap: spaces,
-    columnGap: spaces,
-
-    gridGap: spaces,
-    gridRowGap: spaces,
-    gridColumnGap: spaces,
-    gridTemplateColumns: spaces,
-    gridTemplateRows: spaces,
-    gridTemplateAreas: spaces,
-    gridTemplate: spaces,
   },
 })
 
 export const spaceSprinkles = createSprinkles(spaceProperties)
+
+const sizeProperties = defineProperties({
+  properties: {
+    width: [...spaces, 'fit-content', 'max-content', 'inherit'],
+    height: [...spaces, 'fit-content', 'max-content', 'inherit'],
+    minWidth: [...spaces, 'fit-content', 'max-content', 'inherit'],
+    minHeight: [...spaces, 'fit-content', 'max-content', 'inherit'],
+    maxWidth: [...spaces, 'fit-content', 'max-content', 'inherit'],
+    maxHeight: [...spaces, 'fit-content', 'max-content', 'inherit'],
+  },
+})
+
+export const sizeSprinkles = createSprinkles(sizeProperties)
