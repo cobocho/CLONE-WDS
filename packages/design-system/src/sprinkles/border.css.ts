@@ -1,9 +1,9 @@
-import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles'
+import { defineProperties } from '@vanilla-extract/sprinkles'
 
 import { spaces } from './space.css'
 import { colorsObject } from './color.css'
 
-const borderProperties = defineProperties({
+export const borderProperties = defineProperties({
   properties: {
     borderWidth: spaces,
     borderRadius: spaces,
@@ -20,5 +20,3 @@ const borderProperties = defineProperties({
     borderColor: colorsObject,
   },
 })
-
-export const borderSprinkles = createSprinkles(borderProperties)

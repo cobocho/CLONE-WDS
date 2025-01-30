@@ -5,10 +5,8 @@ import clsx from 'clsx'
 import { StorybookHeader } from '@/storybook-units/StorybookHeader'
 import { StorybookDivider } from '@/storybook-units/StorybookDivider'
 import { StorybookSubheader } from '@/storybook-units/StorybookSubheader'
-import { sizeSprinkles, spaceSprinkles } from '@/sprinkles/space.css'
-import { displaySprinkles } from '@/sprinkles/display.css'
 import { Text } from '@/components/Text'
-import { borderSprinkles } from '@/sprinkles/border.css'
+import { sprinkles } from '@/sprinkles'
 
 import { paletteContainer } from './Colors.css'
 
@@ -28,7 +26,7 @@ export const Definition: Story = {
         <StorybookDivider />
         <StorybookSubheader title="색" />
         <div
-          className={displaySprinkles({
+          className={sprinkles({
             display: 'flex',
             flexDirection: 'column',
             gap: '48px',
@@ -749,7 +747,7 @@ interface ColorRowProps {
 function ColorRow({ colors, title }: ColorRowProps) {
   return (
     <div
-      className={displaySprinkles({
+      className={sprinkles({
         display: 'flex',
         flexDirection: 'column',
         gap: '24px',
@@ -758,7 +756,7 @@ function ColorRow({ colors, title }: ColorRowProps) {
       <Text type="Heading 2" weight="bold">
         {title}
       </Text>
-      <div className={displaySprinkles({ display: 'flex' })}>
+      <div className={sprinkles({ display: 'flex' })}>
         {colors.map((color) => (
           <ColorBox key={color.name} color={color.color} name={color.name} />
         ))}
@@ -773,9 +771,9 @@ function ColorBox({ color, name }: { color: string; name: string }) {
   return (
     <div
       className={clsx(
-        sizeSprinkles({ width: '100%' }),
-        displaySprinkles({
+        sprinkles({
           display: 'flex',
+          width: '100%',
           flexDirection: 'column',
           alignItems: 'center',
           gap: '8px',
@@ -783,7 +781,7 @@ function ColorBox({ color, name }: { color: string; name: string }) {
       )}
     >
       <div
-        className={sizeSprinkles({ width: '100%', height: '64px' })}
+        className={sprinkles({ width: '100%', height: '64px' })}
         style={{ backgroundColor: color }}
       />
       <Text>{step}</Text>
@@ -909,17 +907,15 @@ function TokenRow({ name, value }: { name: string; value: string }) {
   return (
     <div
       className={clsx(
-        displaySprinkles({
+        sprinkles({
           display: 'flex',
           gap: '8px',
-        }),
-        spaceSprinkles({
           marginBlock: '16px',
         }),
       )}
     >
       <div
-        className={displaySprinkles({
+        className={sprinkles({
           display: 'flex',
           gap: '12px',
         })}
@@ -932,12 +928,13 @@ function TokenRow({ name, value }: { name: string; value: string }) {
             backgroundColor: value,
           }}
           className={clsx(
-            sizeSprinkles({ width: '24px', height: '24px' }),
-            borderSprinkles({
+            sprinkles({
               borderWidth: '1px',
               borderStyle: 'solid',
               borderRadius: '100%',
               borderColor: 'CoolNeutral90',
+              width: '24px',
+              height: '24px',
             }),
           )}
         />

@@ -1,4 +1,4 @@
-import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles'
+import { defineProperties } from '@vanilla-extract/sprinkles'
 
 import { spaces } from './space.css'
 
@@ -74,5 +74,3 @@ export const displayProperties = defineProperties({
     gridTemplate: spaces,
   },
 })
-
-export const displaySprinkles = createSprinkles(displayProperties)

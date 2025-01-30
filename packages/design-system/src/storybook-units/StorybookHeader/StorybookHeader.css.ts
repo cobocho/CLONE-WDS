@@ -11,7 +11,6 @@ export const storybookHeader = style({
 
 export const storybookHeaderTitle = style({
   display: 'flex',
-  gap: '48px',
 })
 
 export const storybookHeaderTitleBlock = style({

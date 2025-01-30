@@ -1,21 +1,10 @@
-import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles'
+import { defineProperties } from '@vanilla-extract/sprinkles'
+import { size } from '@repo/design-tokens'
+
+const tokens = Object.values(size)
 
 export const spaces = [
-  '0.5px',
-  '1px',
-  '2px',
-  '4px',
-  '8px',
-  '10px',
-  '12px',
-  '16px',
-  '20px',
-  '24px',
-  '32px',
-  '40px',
-  '48px',
-  '56px',
-  '64px',
+  ...tokens,
   '10%',
   '25%',
   '33.33%',
@@ -27,7 +16,7 @@ export const spaces = [
   '100%',
 ] as const
 
-const spaceProperties = defineProperties({
+export const spaceProperties = defineProperties({
   properties: {
     margin: spaces,
     marginTop: spaces,
@@ -47,9 +36,7 @@ const spaceProperties = defineProperties({
   },
 })
 
-export const spaceSprinkles = createSprinkles(spaceProperties)
-
-const sizeProperties = defineProperties({
+export const sizeProperties = defineProperties({
   properties: {
     width: [...spaces, 'fit-content', 'max-content', 'inherit'],
     height: [...spaces, 'fit-content', 'max-content', 'inherit'],
@@ -59,5 +46,3 @@ const sizeProperties = defineProperties({
     maxHeight: [...spaces, 'fit-content', 'max-content', 'inherit'],
   },
 })
-
-export const sizeSprinkles = createSprinkles(sizeProperties)

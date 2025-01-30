@@ -5,13 +5,11 @@ import clsx from 'clsx'
 import { StorybookHeader } from '@/storybook-units/StorybookHeader'
 import { StorybookDivider } from '@/storybook-units/StorybookDivider'
 import { StorybookSubheader } from '@/storybook-units/StorybookSubheader'
-import { sizeSprinkles, spaceSprinkles } from '@/sprinkles/space.css'
 import { Text } from '@/components/Text'
-import { displaySprinkles } from '@/sprinkles/display.css'
-import { borderSprinkles } from '@/sprinkles/border.css'
 import { semanticVars } from '@/index.css'
+import { sprinkles } from '@/sprinkles'
 
-import { paletteContainer } from './Colors.css'
+import { paletteColumn, paletteContainer } from './Colors.css'
 
 const meta = {
   title: 'Theme/Color - Semantic',
@@ -36,13 +34,13 @@ export const Definition: Story = {
             '원티드 색상 규칙은 다음과 같이 구성되어 있습니다.\n보다 자세한 설명과 예시는 다음 예시 섹션에서 확인할 수 있습니다.'
           }
         />
-        <div className={displaySprinkles({ display: 'flex', gap: '32px' })}>
-          <div className={sizeSprinkles({ width: '50%' })}>
+        <div className={sprinkles({ display: 'flex' })}>
+          <div className={paletteColumn}>
             <Text type="Heading 2" weight="bold" transform="capitalize">
               {theme}
             </Text>
           </div>
-          <div>
+          <div className={paletteColumn}>
             <div>
               <Text type="Heading 2" weight="bold" transform="capitalize">
                 Color
@@ -50,7 +48,7 @@ export const Definition: Story = {
             </div>
             <div
               className={clsx(
-                displaySprinkles({
+                sprinkles({
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '8px',
@@ -96,10 +94,37 @@ export const Definition: Story = {
                   {
                     name: 'Assistive',
                     color: semanticVars.LabelAssistive,
+                    border: true,
                   },
                   {
                     name: 'Disable',
                     color: semanticVars.LabelDisable,
+                    border: true,
+                  },
+                ]}
+              />
+              <SemanticColorRow
+                title="Background"
+                colors={[
+                  {
+                    name: 'Normal',
+                    color: semanticVars.BackgroundNormalNormal,
+                    border: true,
+                  },
+                  {
+                    name: 'Alternative',
+                    color: semanticVars.BackgroundNormalAlternative,
+                    border: true,
+                  },
+                  {
+                    name: 'Elevated Normal',
+                    color: semanticVars.BackgroundElevatedNormal,
+                    border: true,
+                  },
+                  {
+                    name: 'Elevated Alternative',
+                    color: semanticVars.BackgroundElevatedAlternative,
+                    border: true,
                   },
                 ]}
               />
@@ -113,6 +138,7 @@ export const Definition: Story = {
                   {
                     name: 'Disable',
                     color: semanticVars.InteractionDisable,
+                    border: true,
                   },
                 ]}
               />
@@ -122,14 +148,17 @@ export const Definition: Story = {
                   {
                     name: 'Normal',
                     color: semanticVars.LineNormalNormal,
+                    border: true,
                   },
                   {
                     name: 'Neutral',
                     color: semanticVars.LineNormalNeutral,
+                    border: true,
                   },
                   {
                     name: 'Alternative',
                     color: semanticVars.LineNormalAlternative,
+                    border: true,
                   },
                 ]}
               />
@@ -193,6 +222,7 @@ export const Definition: Story = {
                   {
                     name: 'Label',
                     color: semanticVars.InverseLabel,
+                    border: true,
                   },
                 ]}
               />
@@ -202,10 +232,12 @@ export const Definition: Story = {
                   {
                     name: 'White',
                     color: semanticVars.StaticWhite,
+                    border: true,
                   },
                   {
                     name: 'Black',
                     color: semanticVars.StaticBlack,
+                    border: true,
                   },
                 ]}
               />
@@ -221,21 +253,17 @@ function SemanticColorRow({
   colors,
   title,
 }: {
-  colors: { name: string; color: string }[]
+  colors: { name: string; color: string; border?: boolean }[]
   title: string
 }) {
   return (
     <div
       className={clsx(
-        displaySprinkles({
+        sprinkles({
           display: 'flex',
           gap: '24px',
           flexDirection: 'column',
-        }),
-        sizeSprinkles({
           width: '50%',
-        }),
-        spaceSprinkles({
           marginBlock: '24px',
         }),
       )}
@@ -243,12 +271,12 @@ function SemanticColorRow({
       <Text type="Heading 2" weight="bold" transform="capitalize">
         {title}
       </Text>
-      <div className={displaySprinkles({ display: 'flex', gap: '32px' })}>
+      <div className={sprinkles({ display: 'flex', gap: '32px' })}>
         {colors.map((color) => (
           <div
             key={color.name}
             className={clsx(
-              displaySprinkles({
+              sprinkles({
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -259,9 +287,15 @@ function SemanticColorRow({
           >
             <div
               className={clsx(
-                sizeSprinkles({ width: '64px', height: '64px' }),
-                borderSprinkles({
+                sprinkles({
+                  width: '64px',
+                  height: '64px',
                   borderRadius: '16px',
+                  ...(color.border && {
+                    borderColor: 'LineNormalNeutral',
+                    borderWidth: '1px',
+                    borderStyle: 'solid',
+                  }),
                 }),
               )}
               style={{ backgroundColor: color.color }}

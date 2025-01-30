@@ -1,4 +1,5 @@
 import { styleVariants } from '@vanilla-extract/css'
+import { defineProperties } from '@vanilla-extract/sprinkles'
 
 import {
   Color,
@@ -22,3 +23,10 @@ export const colorsObject: Record<Color, { color: string }> = Object.keys(
 )
 
 export const colorVariants = styleVariants(colorsObject)
+
+export const colorProperties = defineProperties({
+  properties: {
+    backgroundColor: colorVariants,
+    color: colorVariants,
+  },
+})

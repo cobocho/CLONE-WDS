@@ -14,8 +14,8 @@
   "scripts": {
     "lint": "eslint .",
     "merge": "node ./src/scripts/merge.js",
-    "generate": "node ./src/scripts/generate.js",
-    "build": "rm -rf dist && rollup -c"
+    "generate": "npm run merge && node ./src/scripts/generate.js",
+    "build": "npm run generate && rm -rf dist && rollup -c"
   },
   "keywords": [],
   "type": "module",

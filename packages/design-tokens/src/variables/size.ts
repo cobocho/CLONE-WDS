@@ -1,0 +1,17 @@
+export const Sizes1 = '1px';
+export const Sizes2 = '2px';
+export const Sizes4 = '4px';
+export const Sizes6 = '6px';
+export const Sizes8 = '8px';
+export const Sizes10 = '10px';
+export const Sizes12 = '12px';
+export const Sizes14 = '14px';
+export const Sizes16 = '16px';
+export const Sizes20 = '20px';
+export const Sizes24 = '24px';
+export const Sizes32 = '32px';
+export const Sizes40 = '40px';
+export const Sizes48 = '48px';
+export const Sizes56 = '56px';
+export const Sizes64 = '64px';
+export const Sizes0dot5 = '0.5px';

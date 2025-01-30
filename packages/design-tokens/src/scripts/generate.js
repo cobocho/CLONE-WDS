@@ -17,6 +17,10 @@ const generateTypeScript = (json, parentKey = '') => {
       ? `${parentKey}${toPascalCase(key)}`
       : toPascalCase(key)
 
+    if (value.type === 'size') {
+      tsContent += `export const ${pascalKey.replaceAll('.', 'dot')} = '${value.value}';\n`
+    }
+
     if (value.type === 'color') {
       // For color type, generate export statement
       tsContent += `export const ${pascalKey} = '${value.value}';\n`
@@ -39,6 +43,11 @@ function generate(inputFilePath, outputFilePath) {
     try {
       const jsonData = JSON.parse(data)
       const tsContent = generateTypeScript(jsonData)
+
+      if (outputFilePath === 'size.ts') {
+        console.log('tsContent')
+        console.log(jsonData)
+      }
 
       fs.writeFile(
         path.resolve(__dirname, 'src/variables', outputFilePath),
@@ -65,3 +74,4 @@ function generate(inputFilePath, outputFilePath) {
 generate(path.resolve(__dirname, 'src/json/Palette.json'), 'palette.ts')
 generate(path.resolve(__dirname, 'src/json/Light.json'), 'light.ts')
 generate(path.resolve(__dirname, 'src/json/Dark.json'), 'dark.ts')
+generate(path.resolve(__dirname, 'src/json/Size.json'), 'size.ts')
