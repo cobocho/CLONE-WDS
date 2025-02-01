@@ -21,22 +21,6 @@ export function resolveReferences(obj, palette) {
   }
 }
 
-export function createSDPlatform(name) {
-  return {
-    js: {
-      transformGroup: 'js',
-      buildPath: 'src/variables/',
-      transforms: ['color/css'],
-      files: [
-        {
-          destination: `${name}.ts`,
-          format: 'javascript/es6',
-        },
-      ],
-    },
-  }
-}
-
 export function parseJSON(path) {
   return JSON.parse(fs.readFileSync(path, 'utf-8'))
 }
